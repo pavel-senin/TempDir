@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ recipe.title }}{% endblock %}
+
+{% block content %}
+    <article>
+        <h2>{{ recipe.title }}</h2>
+        <p><strong>Описание:</strong> {{ recipe.description }}</p>
+        <p><strong>Шаги приготовления:</strong></p>
+        <ol>
+        {% for step in recipe.steps %}
+            <li>{{ step }}</li>
+        {% endfor %}
+        </ol>
+        <p><strong>Время приготовления:</strong> {{ recipe.preparation_time }}</p>
+        <p><strong>Автор:</strong> {{ recipe.author }}</p>
+        <!-- Добавьте изображение здесь -->
+    </article>
+{% endblock %}
